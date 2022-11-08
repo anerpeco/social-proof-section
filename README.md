@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github](https://your-solution-url.com)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/anerpeco/social-proof-section)
+- Live Site URL: [Vercel](https://social-proof-section-anerpeco.vercel.app/)
 
 ## My process
 
