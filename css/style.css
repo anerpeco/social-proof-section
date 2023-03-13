@@ -4,200 +4,236 @@
     --dark-grayish-magenta: hsl(303, 10%, 53%);
     --light-grayish-magenta: hsl(300, 24%, 96%);
     --white: hsl(0, 0%, 100%);
-
-    --ff-league-spartan: "League Spartan", sans-serif;
-
-    --fs-body: .9rem;
-    --fs-h1: 1.7rem;
-    --fs-h2: .9rem;
-
-    --fw-regular: 400;
-    --fw-medium: 500;
-    --fw-bold: 700;
 }
 
 body {
     background-color: var(--white);
     background-image: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
     background-repeat: no-repeat, no-repeat;
-    background-position: right 2vw top 0, left 10vw bottom 0;
-    font-family: var(--ff-league-spartan);
-    font-size: var(--fs-body);
-    font-weight: var(--fw-regular);
-    line-height: 1.3;
-    display: grid;
+    background-attachment: scroll, fixed;
+    background-position: top 0 left 0, right 0 bottom 0;
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.1875rem;
+    font-weight: 500;
+    line-height: 1.5625rem;
+    display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+}
 
+@media screen and (min-width: 61.875rem) {
+    body {
+        background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+    }
 }
 
 .container {
-    margin: 2rem 1rem;
-    max-width: 24rem;
+    display: grid;
+    grid-template-areas:
+        "info"
+        "rating"
+        "card";
+    padding: 5.125rem 1.5rem;
+    max-width: 23.4375rem;
 }
 
-.container h1,
-.container p {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.container h1 {
-    font-size: var(--fs-h1);
-    font-weight: var(--fw-bold);
-    line-height: 1;
-    color: var(--very-dark-magenta);
-
-}
-
-.container p {
-    color: var(--dark-grayish-magenta);
+@media screen and (min-width: 90rem) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        grid-template-areas:
+            "info rating"
+            "card card";
+        padding: 7.375rem 10.3125rem 6.25rem;
+        max-width: 90rem;
+    }
 }
 
 .info-container {
     grid-area: info;
+    text-align: center;
+    margin-bottom: 2.4375rem;
+}
+
+@media screen and (min-width: 90rem) {
+    .info-container {
+        text-align: start;
+        margin-bottom: 4.4375rem;
+        padding-right: 6.875rem;
+    }
+}
+
+.info-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: -.0893rem;
+    color: var(--very-dark-magenta);
+    margin-bottom: 1.0625rem;
+}
+
+@media screen and (min-width: 90rem) {
+    .info-container h1 {
+        font-size: 3.5rem;
+        line-height: 3rem;
+        letter-spacing: -0.125rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.info-container p {
+    letter-spacing: -0.0396rem;
+    color: var(--dark-grayish-magenta);
 }
 
 .rating-container {
+    grid-area: rating;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-bottom: 1rem;
-    grid-area: rating;
+    margin-bottom: 3.0625rem;
+
+}
+
+@media screen and (min-width: 90rem) {
+    .rating-container {
+        margin-bottom: 4.4375rem;
+        padding-left: .9375rem;
+    }
 }
 
 .rating {
     background-color: var(--light-grayish-magenta);
-    padding: 1rem 2rem;
+    padding: 1rem 0 .9375rem;
     border-radius: .5rem;
+    width: 100%;
+}
+
+@media screen and (min-width: 90rem) {
+    .rating {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 2rem;
+        width: 27.8125rem;
+    }
 }
 
 .rating .stars {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: .5rem;
+    gap: .5rem;
+    margin-bottom: .9375rem;
+}
+
+@media screen and (min-width: 90rem) {
+    .rating .stars {
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
+}
+
+.stars img {
+    width: 1.0313rem;
 }
 
 .rating h2 {
-    font-size: var(--fs-h2);
-    font-weight: var(--fw-bold);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1rem;
     text-align: center;
     color: var(--very-dark-magenta);
 }
 
-.card-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    grid-area: card;
-}
-
-figure {
-    background-color: var(--very-dark-magenta);
-    border-radius: .5rem;
-    padding: 1rem;
-    color: var(--light-grayish-magenta);
-}
-
-figure img,
-figure figcaption {
-    display: inline-block;
-}
-
-figure img {
-    width: 2rem;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
-figure figcaption {
-    font-weight: var(--fw-medium);
-}
-
-figure figcaption span {
-    color: var(--soft-pink);
-}
-
-figure blockquote {
-    margin-top: 1rem;
-}
-
-@media screen and (min-width: 23.3rem) {
-    body {
-        background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
-        background-repeat: no-repeat, no-repeat;
-        background-position: right 70vw top 0, left 20vw bottom;
-    }
-}
-
-@media screen and (min-width: 55.18rem) {
-
-    .container h1,
-    .container p {
+@media screen and (min-width: 90rem) {
+    .rating h2 {
         text-align: start;
     }
+}
 
-    .container h1 {
-        font-size: 2rem;
-        max-width: 60%;
-    }
-
-    .container {
-        margin: 2rem 1rem;
-        max-width: 55.18rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr .8fr;
-        grid-template-areas: "info rating"
-            "card card";
-        gap: 3rem;
-    }
-
-    .rating-container {
-        display: flex;
-    }
-
-    .rating {
-        display: flex;
-        flex-direction: row;
-        place-content: center;
-    }
-
-    .rating .stars {
-        gap: .3rem;
-        margin-right: .8rem;
-    }
-
-    .reviews {
-        align-self: flex-start;
-    }
-
+@media screen and (min-width: 90rem) {
     .report-guru {
-        align-self: center;
+        margin-left: 2.9688rem;
     }
 
     .tech {
-        align-self: flex-end;
+        margin-left: 5.9375rem;
     }
+}
 
+.card-container {
+    grid-area: card;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 90rem) {
     .card-container {
-        grid-column: 1 / 3;
         flex-direction: row;
-        flex-basis: 0;
+        gap: 1.875rem;
     }
+}
 
+.card {
+    background-color: var(--very-dark-magenta);
+    border-radius: .5rem;
+    padding: 2.5rem 2rem 2.1875rem;
+    color: var(--white);
+    width: 100%;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+}
+
+.card-name span {
+    display: block;
+}
+
+.card img {
+    width: 2.5rem;
+    border-radius: 50%;
+    margin-right: 1.4375rem;
+}
+
+.card-name {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1rem;
+}
+
+.card-name span {
+    font-weight: 400;
+    color: var(--soft-pink);
+    margin-top: .25rem;
+}
+
+.card-quote {
+    font-size: 1.0625rem;
+    line-height: 1.375rem;
+    letter-spacing: -0.019rem;
+    margin-top: 1.4375rem;
+}
+
+@media screen and (min-width: 90rem) {
+    .card-quote {
+        margin-top: 1.9375rem;
+    }
+}
+
+@media screen and (min-width: 90rem) {
     .card-colton {
-        align-self: flex-start;
-
+        margin-bottom: 2rem;
     }
 
     .card-irene {
-        align-self: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .card-anne {
-        align-self: flex-end;
         margin-top: 2rem;
     }
 }
